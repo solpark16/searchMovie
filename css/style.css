@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: #000;
+    /* color: white; */
+}
+.wrap {
+    display: flex;
+    width: 1920px;
+    margin: 50px auto;
+    /* border: 1px solid white; */
+    padding: 30px;
+}
+.leftBox {
+    width: 500px;
+    border-right: 1px solid #fff;
+    padding: 20px;
+}
+.leftBox h1 {
+    color: #ffff00;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+.leftBox .search {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.leftBox .search label {
+    color: #ffff00;
+    font-size: 24px;
+    white-space: nowrap;
+}
+.leftBox .search input {
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    height: 32px;
+    width: 100%;
+}
+.leftBox .search #searchBtn {
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: #ffff00;
+    border: none;
+    font-size: 16px;
+    height: 36px;
+    cursor: pointer;
+    width: 50px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.rightBox {
+    width: 100%;
+    padding: 20px;
+}
+.movieCardBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    justify-content: center;
+}
+.movieCard {
+    /* 임의 크기 지정 */
+    width: 300px;
+    /* height: 800px; */
+    background-color: yellow;
+    cursor:pointer;
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.movieCard:hover {
+    background-color: #fff;
+    transform: scale(1.1);
+}
+
+.movieCard .movieImage {
+    width: 100%;
+
+}
+.movieCard .movieTitle {
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+.movieCard .movieOverview {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+
+}
+.movieCard .movieAverage {
+    font-size: 24px;
+    font-weight: bold;
+}

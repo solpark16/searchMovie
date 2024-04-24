@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 검색 사이트</title>
+    <link href="./css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="wrap">
+        <div class="leftBox">
+            <h1>최고의 영화들!</h1>
+            <form class="search" onsubmit="return false;">
+                <label>영화 검색 </label>
+                <input type="text" id="searchInput" placeholder="영화 제목을 검색해 보세요">
+                <button type="button" id="searchBtn">검색</button>
+            </form>
+        </div>
+        <div class="rightBox">
+            <ul class="movieCardBox">
+            </ul>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
