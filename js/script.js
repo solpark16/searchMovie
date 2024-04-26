@@ -27,7 +27,7 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&page=1', opti
                 <img class="movieImage" src="https://image.tmdb.org/t/p/original${posterPath}" alt="">
                 <p class="movieTitle">${title}</p>
                 <p class="movieOverview">${overview}</p>
-                <p class="movieAverage">Rating : ${voteAverage}</p>
+                <p class="movieAverage">평점 : ${voteAverage.toFixed(2)}/10</p>
             `
             movieCardBox.appendChild(movieCard);
         }
