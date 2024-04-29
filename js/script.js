@@ -8,6 +8,7 @@ const options = {
 
 const movieCardBox = document.querySelector(".movieCardBox");
 const movieListBox = document.querySelector(".movieListBox");
+
 console.log(movieCardBox);
 
 fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
@@ -38,14 +39,13 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
             let movieList = document.createElement('li');
             movieList.className = 'movieList';
             movieList.id = `${id}`
-            movieList.innerHTML = `
-                <p class="movieListTitle">${title}</p>
-            `
+            movieList.innerHTML = `${title}`
             movieListBox.appendChild(movieList);
 
 
         }
-
+        const movieCardList = document.querySelectorAll(".movieCard");
+        // 카드 클릭 시 알럿 기능
         function clickMovieCard(event) {
             event.stopPropagation()
             console.log(event.target.id)
@@ -57,13 +57,28 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
         }
         document.querySelectorAll(".movieCard").forEach((item) => {
             item.addEventListener("click", clickMovieCard);
+        });
 
+        // 리스트 클릭 시 해당 카드 나오는 기능
+        function clickMovieList(event){
+            
+            event.stopPropagation()
+            const clickedList = [...movieCardList].forEach((item)=>{
+                item.style.display="none"
+                if (item.id === event.target.id){
+                    item.style.display="block"
+                }
+            })
+        }
+
+        document.querySelectorAll(".movieList").forEach((item) => {
+            item.addEventListener("click", clickMovieList);
         });
 
         // 검색 기능
         const searchBtn = document.querySelector("#searchBtn");
         const searchInput = document.querySelector("#searchInput");
-        const movieCardList = document.querySelectorAll(".movieCard");
+        
         searchInput.focus();
         
         function clickSearchBtn(){

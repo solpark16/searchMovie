@@ -62,11 +62,11 @@ body {
 }
 
 
-.leftBox .movieListBox .movieList .movieListTitle {
+.leftBox .movieListBox .movieList {
     color: #ffff00;
 
 }
-.leftBox .movieListBox .movieList .movieListTitle:hover {
+.leftBox .movieListBox .movieList:hover {
     color: #fff;
 }
 .rightBox {
