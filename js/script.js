@@ -7,6 +7,7 @@ const options = {
 };
 
 const movieCardBox = document.querySelector(".movieCardBox");
+const movieListBox = document.querySelector(".movieListBox");
 console.log(movieCardBox);
 
 fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
@@ -14,12 +15,14 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
     .then(response => {
         let results = response.results;
         for (let i = 0; i < results.length; i++) {
+            // 변수에 i번째 요소 넣기
             let title = results[i].title;
             let overview = results[i].overview;
             let voteAverage = results[i].vote_average;
             let posterPath = results[i].poster_path;
             let id = results[i].id;
 
+            // 카드 제작 및 넣기
             let movieCard = document.createElement('li');
             movieCard.className = 'movieCard';
             movieCard.id = `${id}`
@@ -27,9 +30,20 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
                 <img class="movieImage" src="https://image.tmdb.org/t/p/original${posterPath}" alt="">
                 <p class="movieTitle">${title}</p>
                 <p class="movieOverview">${overview}</p>
-                <p class="movieAverage">평점 : ${voteAverage.toFixed(2)}/10</p>
+                <p class="movieAverage">Rating : ${voteAverage.toFixed(2)}/10</p>
             `
             movieCardBox.appendChild(movieCard);
+
+            // 좌측 공간에 제목 넣기
+            let movieList = document.createElement('li');
+            movieList.className = 'movieList';
+            movieList.id = `${id}`
+            movieList.innerHTML = `
+                <p class="movieListTitle">${title}</p>
+            `
+            movieListBox.appendChild(movieList);
+
+
         }
 
         function clickMovieCard(event) {

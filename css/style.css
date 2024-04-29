@@ -26,6 +26,7 @@ body {
     display: flex;
     gap: 10px;
     align-items: center;
+    margin-bottom: 40px;
 }
 .leftBox .search label {
     color: #ffff00;
@@ -50,6 +51,23 @@ body {
     width: 50px;
     font-weight: bold;
     white-space: nowrap;
+}
+
+.leftBox .movieListBox .movieList {
+    cursor: pointer;
+}
+.leftBox .movieListBox .movieList + .movieList {
+    margin-top: 20px;
+    
+}
+
+
+.leftBox .movieListBox .movieList .movieListTitle {
+    color: #ffff00;
+
+}
+.leftBox .movieListBox .movieList .movieListTitle:hover {
+    color: #fff;
 }
 .rightBox {
     width: 100%;
