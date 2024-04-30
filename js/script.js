@@ -41,18 +41,19 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", opti
       movieList.innerHTML = `${title}`;
       movieListBox.appendChild(movieList);
     }
+    // const movieCardBox = document.querySelector(".movieCardBox");
     const movieCardList = document.querySelectorAll(".movieCard");
     // 카드 클릭 시 알럿 기능
     function clickMovieCard(event) {
-      event.stopPropagation();
-      if (event.target.id == "") {
-        alert("이 영화의 ID는 " + event.target.closest(".movieCard").id + "입니다!");
-      } else {
+      if (event.target === movieCardBox) return;
+      if (event.target.matches(".movieCard")) {
         alert("이 영화의 ID는 " + event.target.id + "입니다!");
+      } else {
+        alert("이 영화의 ID는 " + event.target.parentNode.id + "입니다!");
       }
     }
-    document.querySelectorAll(".movieCard").forEach((item) => {
-      item.addEventListener("click", clickMovieCard);
+    movieCardBox.addEventListener("click", () => {
+      clickMovieCard(event);
     });
 
     // 리스트 클릭 시 해당 카드 나오는 기능
@@ -72,7 +73,6 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", opti
 
     // 검색 기능
     const searchForm = document.querySelector(".search");
-    const searchBtn = document.querySelector("#searchBtn");
     const searchInput = document.querySelector("#searchInput");
 
     searchInput.focus();

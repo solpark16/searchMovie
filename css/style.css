@@ -6,7 +6,8 @@ body {
 }
 .wrap {
   display: flex;
-  width: 1920px;
+  min-width: 800px;
+  max-width: 1920px;
   margin: 50px auto;
   padding: 30px;
 }
