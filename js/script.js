@@ -41,7 +41,6 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", opti
       movieList.innerHTML = `${title}`;
       movieListBox.appendChild(movieList);
     }
-    // const movieCardBox = document.querySelector(".movieCardBox");
     const movieCardList = document.querySelectorAll(".movieCard");
     // 카드 클릭 시 알럿 기능
     function clickMovieCard(event) {
